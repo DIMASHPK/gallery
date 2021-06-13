@@ -1,5 +1,5 @@
 export interface InitTemplateInterface {
-  mainClassName?: Array<string> | string;
+  mainClassName?: string[] | string;
   id?: string | number;
 }
 
@@ -12,6 +12,10 @@ export const getInitTemplate = <T extends InitTemplateInterface>(initData: T): H
 
   mainWrapper.innerHTML = `<div class="modal_overlay">
   <div class="modal_container">
+    <button class="modal_container_closeButton">
+        <span class="modal_container_closeButton_background"></span>
+        <span class="modal_container_closeButton_title">&#x2715</span>
+    </button>
   </div>`;
 
   return mainWrapper;
